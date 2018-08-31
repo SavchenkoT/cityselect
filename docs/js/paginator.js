@@ -27,13 +27,17 @@ document.querySelector('.next').addEventListener('click', function () {
 document.querySelector('.slide').addEventListener('click', function (event) {
   let clickedPageLink = event.target;
   let clickedPageButton = clickedPageLink.parentNode;
-  let pageButtons = document.querySelectorAll('.page-item');
+	let pageLinks = document.querySelectorAll('.page-item a');
   let clickedPageNumber = parseInt(clickedPageLink.text);
 
-  pageButtons.forEach(function (pageButton) {
-  	pageButton.classList.remove('active');
+  pageLinks.forEach(function (pageLink) {
+      pageLink.classList.remove('active');
   });
 
-  clickedPageButton.classList.add('active');
-  moveSlideToPage(clickedPageNumber-2);
+	clickedPageLink.classList.add('active');
+	let newLeftmostPage = clickedPageNumber-1;
+	if (newLeftmostPage > maxLeftmostPage) {
+	   newLeftmostPage = maxLeftmostPage;
+	}
+	moveSlideToPage(newLeftmostPage);
 });
