@@ -77,7 +77,8 @@ a {
   background: linear-gradient(#225e0a 20%, #338e0f 54%, #28720c 50%);
   -webkit-box-shadow: -3px 1px 58px -5px rgba(21, 40, 85, 0.68);
   -moz-box-shadow: -3px 1px 58px -5px rgba(21, 40, 85, 0.68);
-  box-shadow: -3px 1px 58px -5px rgba(21, 40, 85, 0.68); }
+  box-shadow: -3px 1px 58px -5px rgba(21, 40, 85, 0.68);
+  border: 1px solid #43ba14; }
   .button:before {
     position: absolute;
     top: -4px;
