@@ -1,42 +1,42 @@
 [
   {
     "id": "01",
-    "city": "London",
+    "city": "London"
   },
   {
     "id": "02",
-    "city": "Tokio",
+    "city": "Tokio"
   },
   {
     "id": "03",
-    "city": "Kyiv",
+    "city": "Kyiv"
   },
   {
     "id": "04",
-    "city": "New York",
+    "city": "New York"
   },
   {
     "id": "05",
-    "city": "Paris",
+    "city": "Paris"
   },
   {
     "id": "06",
-    "city": "Madrid",
+    "city": "Madrid"
   },
   {
     "id": "07",
-    "city": "Toronto",
+    "city": "Toronto"
   },
   {
     "id": "08",
-    "city": "Mexico",
+    "city": "Mexico"
   },
   {
     "id": "09",
-    "city": "Berlin",
+    "city": "Berlin"
   },
   {
     "id": "10",
-    "city": "Amsterdam",
-  },
+    "city": "Amsterdam"
+  }
 ]

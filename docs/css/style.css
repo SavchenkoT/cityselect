@@ -138,6 +138,17 @@ a {
         }
     }
   } */ }
+  .pagination:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to top, #000, transparent);
+    opacity: 0.8;
+    margin-left: -3px;
+    border-radius: 23px;
+    pointer-events: none; }
   .pagination .window {
     width: 90px;
     overflow: hidden;
@@ -208,7 +219,6 @@ a {
             background: radial-gradient(circle at bottom, #99d801, #54ab05 50%); }
   .pagination .nav-btn {
     display: inline-block;
-    font-family: FontAwesome\ 5 Free;
     width: 24px;
     height: 24px;
     padding: 3px;
@@ -221,21 +231,6 @@ a {
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: all .3s ease;
     z-index: 0; }
-    .pagination .nav-btn.prev {
-      /* background-image: url('../img/prev.gif');
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: 1; */ }
-      .pagination .nav-btn.prev:before {
-        content: "\f053";
-        display: block; }
-    .pagination .nav-btn.next {
-      /* background-image: url('../img/next.gif');
-      background-position: center;
-      background-repeat: no-repeat; */ }
-      .pagination .nav-btn.next:before {
-        content: "\f054";
-        display: block; }
 
 .select-name {
   font-size: 24px;
