@@ -43,12 +43,26 @@ function showCity() {
   ]
 }
 
-let name = [];
-for (let i=0; i < listCity.length; i++){
-  for ( let key in listCity[i]) {
-    if (name.indexOf(key) === -1) {
-      name.push(key);
-      console.log(name.id[09]);
-    }
-  }
+function challangeCity(jsonObj) {
+  var london = document.getElementById('01');
+  london.textContent = jsonObj['city'];
+
+  var tokio = document.getElementById('02');
+  tokio.textContent = jsonObj['city'];
+
+  var kyiv = document.getElementById('03');
+  kyiv.textContent = jsonObj['city'];
+
 }
+
+console.log(london);
+
+// let name = [];
+// for (let i=0; i < listCity.length; i++){
+//   for ( let key in listCity[i]) {
+//     if (name.indexOf(key) === -1) {
+//       name.push(key);
+//       console.log(name.id[09]);
+//     }
+//   }
+// }

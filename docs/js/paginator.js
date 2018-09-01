@@ -1,6 +1,6 @@
 let currentPage = 1;
 let slideLeftPage = 1;
-let pageButtonSizePx = 26;
+let pageButtonSizePx = 30;
 let totalPages = 10;
 let pagesPerSlide = 3;
 let maxLeftmostPage = totalPages - pagesPerSlide;
