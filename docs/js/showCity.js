@@ -1,81 +1,73 @@
-function showCity() {
-  let listCity = [
+function getCityList() {
+  return [
     {
       "id": "01",
-      "city": "London",
+      "city": "London"
     },
     {
       "id": "02",
-      "city": "Tokio",
+      "city": "Tokio"
     },
     {
       "id": "03",
-      "city": "Kyiv",
+      "city": "Kyiv"
     },
     {
       "id": "04",
-      "city": "New York",
+      "city": "New York"
     },
     {
       "id": "05",
-      "city": "Paris",
+      "city": "Paris"
     },
     {
       "id": "06",
-      "city": "Madrid",
+      "city": "Madrid"
     },
     {
       "id": "07",
-      "city": "Toronto",
+      "city": "Toronto"
     },
     {
       "id": "08",
-      "city": "Mexico",
+      "city": "Mexico"
     },
     {
       "id": "09",
-      "city": "Berlin",
+      "city": "Berlin"
     },
     {
       "id": "10",
-      "city": "Amsterdam",
-    },
+      "city": "Amsterdam"
+    }
   ]
 }
 
-function showCity(prop, asc) {
-    listCity = listCity.sort(function(a, b) {
-        if (asc) {
-            return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
-        } else {
-            return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
-        }
-    });
-    showCity();
+function cloneObject(objectToClone) {
+    return JSON.parse(JSON.stringify(objectToClone));
 }
 
-showCity('id', true);
+function findCityById(searchId) {
+    return getCityList().reduce(function (foundCity, checkedCity) {
+        if (checkedCity.id === searchId) {
+            foundCity = cloneObject(checkedCity);
+        }
 
-// function challangeCity(jsonObj) {
-//   var london = document.getElementById('01');
-//   london.textContent = jsonObj['city'];
-//
-//   var tokio = document.getElementById('02');
-//   tokio.textContent = jsonObj['city'];
-//
-//   var kyiv = document.getElementById('03');
-//   kyiv.textContent = jsonObj['city'];
-//
-// }
+        return foundCity;
+    }, false);
+}
 
-console.log(london);
+function showCityById(cityId) {
+    let city = findCityById(cityId);
+    let cityIsFound = city !== false;
+    let textToShow = cityIsFound
+        ? city.city
+        : 'Город не найден';
 
-// let name = [];
-// for (let i=0; i < listCity.length; i++){
-//   for ( let key in listCity[i]) {
-//     if (name.indexOf(key) === -1) {
-//       name.push(key);
-//       console.log(name.id[09]);
-//     }
-//   }
-// }
+    let textContainer = document.getElementById('selectedCityResult');
+    textContainer.textContent = textToShow;
+}
+
+function showDefaultCity() {
+    showCityById("01");
+}

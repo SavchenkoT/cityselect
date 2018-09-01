@@ -6,7 +6,7 @@ let maxLeftmostPage = totalPages - pagesPerSlide;
 
 function moveSlideToPage(leftmostPageNumber) {
     let slideElement = document.querySelector('.slide');
-    slideElement.style['margin-left'] = '-' + (leftmostPageNumber) * pageButtonSizePx + 'px';
+    slideElement.style['margin-left'] = '-' + (leftmostPageNumber-1) * pageButtonSizePx + 'px';
 }
 
 document.querySelector('.prev').addEventListener('click', function () {
@@ -17,7 +17,7 @@ document.querySelector('.prev').addEventListener('click', function () {
 });
 
 document.querySelector('.next').addEventListener('click', function () {
-    if (slideLeftPage < maxLeftmostPage) {
+    if (slideLeftPage <= maxLeftmostPage) {
         slideLeftPage++;
     }
     moveSlideToPage(slideLeftPage);
@@ -25,6 +25,7 @@ document.querySelector('.next').addEventListener('click', function () {
 
 document.querySelector('.slide').addEventListener('click', function (event) {
     let clickedPageLink = event.target;
+    let clickedPageButton = clickedPageLink.parentNode;
     let pageLinks = document.querySelectorAll('.page-item a');
     let clickedPageNumber = parseInt(clickedPageLink.text);
 
@@ -34,8 +35,15 @@ document.querySelector('.slide').addEventListener('click', function (event) {
 
     clickedPageLink.classList.add('active');
     let newLeftmostPage = clickedPageNumber - 1;
-    if (newLeftmostPage > maxLeftmostPage) {
-        newLeftmostPage = maxLeftmostPage;
+    if (clickedPageNumber > maxLeftmostPage + 1) {
+        newLeftmostPage = maxLeftmostPage + 1;
     }
     moveSlideToPage(newLeftmostPage);
+
+    let selectedCityId = clickedPageButton.getAttribute('data-id');
+    if (selectedCityId) {
+        showCityById(selectedCityId);
+    }
 });
+
+showDefaultCity();
