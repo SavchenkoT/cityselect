@@ -43,17 +43,30 @@ function showCity() {
   ]
 }
 
-function challangeCity(jsonObj) {
-  var london = document.getElementById('01');
-  london.textContent = jsonObj['city'];
-
-  var tokio = document.getElementById('02');
-  tokio.textContent = jsonObj['city'];
-
-  var kyiv = document.getElementById('03');
-  kyiv.textContent = jsonObj['city'];
-
+function showCity(prop, asc) {
+    listCity = listCity.sort(function(a, b) {
+        if (asc) {
+            return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+        } else {
+            return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+        }
+    });
+    showCity();
 }
+
+showCity('id', true);
+
+// function challangeCity(jsonObj) {
+//   var london = document.getElementById('01');
+//   london.textContent = jsonObj['city'];
+//
+//   var tokio = document.getElementById('02');
+//   tokio.textContent = jsonObj['city'];
+//
+//   var kyiv = document.getElementById('03');
+//   kyiv.textContent = jsonObj['city'];
+//
+// }
 
 console.log(london);
 

@@ -19,7 +19,7 @@ body {
   color: #fff;
   font-family: 'Helvetica', sans-serif;
   font-size: 1rem;
-  /* background-color: #0d192c; */
+  background-color: #0d192c;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -241,3 +241,6 @@ a {
   font-size: 24px;
   display: flex;
   margin-top: 20px; }
+  .select-name span {
+    font-size: 24px;
+    color: #fff; }
